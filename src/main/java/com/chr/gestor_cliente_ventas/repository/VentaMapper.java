@@ -29,4 +29,13 @@ public interface VentaMapper {
     @Insert("INSERT INTO ventas(cliente_id, monto, fecha) VALUES(#{clienteId}, #{monto}, #{fecha})")
     void insertVenta(Venta venta);
 
+    @Select("SELECT * FROM ventas WHERE id = #{id}")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "clienteId", column = "cliente_id"),
+            @Result(property = "monto", column = "monto"),
+            @Result(property = "fecha", column = "fecha")
+    })
+    Venta getVentaById(int id);
+
 }

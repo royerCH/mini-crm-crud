@@ -33,6 +33,11 @@ public class VentaRestController {
         ventaService.addVenta(venta);
     }
 
+    @GetMapping("/{id}")
+    public Venta getVentaById(@PathVariable int id) {
+        return ventaService.getVentaById(id);
+    }
+
 
 }
 
