@@ -3,8 +3,8 @@ h1{
 }
 #img-encabezado{
     margin-bottom: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
     width: 80%;     /* ancho fijo */
     height: auto;
 }
