@@ -41,6 +41,11 @@ public class ClienteRestController {
     public void deleteCliente(@PathVariable int id) {
         clienteService.deleteCliente(id);
     }
+
+    @GetMapping("/count")
+    public int countClientes() {
+        return clienteService.getAllClientes().size(); // O tu Mapper countClientes()
+    }
 }
 
 

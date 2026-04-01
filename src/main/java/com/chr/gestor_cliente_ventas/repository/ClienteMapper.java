@@ -24,5 +24,8 @@ public interface ClienteMapper{
     @Delete("DELETE FROM clientes WHERE id=#{id}")
     void deleteCliente(int id);
 
+    @Select("SELECT COUNT(*) FROM clientes")
+    int countClientes();
+
 
 }
