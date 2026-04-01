@@ -12,7 +12,7 @@ public class TestController {
 
     @GetMapping("/")
     public String home() {
-        return "<h1>Escribir la siguiente dirección en la URL para acceder al sistema: http://localhost:8080/login.html</h1>";
+        return "<h1>Escribir la siguiente dirección en la URL para acceder al sistema: http://localhost:8080/login</h1>";
     }
 
 }

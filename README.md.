@@ -1,0 +1,38 @@
+Mini CRM – Gestión de Clientes y Ventas
+
+[![GitHub Repo](https://img.shields.io/badge/GitHub-royerCH/mini--crm--crud-blue)](https://github.com/royerCH/mini-crm-crud)
+
+**Tecnologías:** Java 17 | Spring Boot | MyBatis | Thymeleaf | MySQL
+
+## 🔹 Descripción
+Mini CRM full-stack para la gestión de clientes y ventas. Permite crear, editar y eliminar
+clientes y ventas, con autenticación de usuarios y una interfaz web moderna y responsiva.
+ Este proyecto sirve como portafolio profesional para demostrar habilidades en
+ desarrollo Java y arquitectura full-stack.
+
+##  Funcionalidades Principales
+- Gestión de **clientes**: agregar, editar, eliminar y listar.
+- Gestión de **ventas**: crear, modificar y eliminar registros.
+- **Login de usuario** con rutas protegidas.
+- Interfaces web dinámicas y responsivas con **Thymeleaf y JavaScript**.
+- Arquitectura modular por capas: `controller`, `service`, `repository`, `model`.
+
+##  Capturas de Pantalla
+**Login – Mini CRM**
+![Login Mini CRM](./docs/login.png)
+
+*(Agrega más capturas dentro de `docs` y enlázalas aquí)*
+
+##  Instalación
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/royerCH/mini-crm-crud.git
+
+
+   ----- > Estructura del Proyecto
+   controller: controladores REST y web (ClienteRestController, VentaRestController, LoginController)
+   service: lógica de negocio y arranque de la aplicación (Application.java)
+   repository: mappers MyBatis (ClienteMapper, UserMapper, VentaMapper)
+   model: clases de entidades (Cliente, Venta, Usuario)
+   resources/templates: vistas Thymeleaf (index.html, login.html, clientes.html, ventas.html)
+   resources/static: JS y CSS (clientes.js, ventas.js)
