@@ -3,6 +3,7 @@ package com.chr.gestor_cliente_ventas.controller;
 import com.chr.gestor_cliente_ventas.service.LoginService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -24,10 +25,11 @@ public class LoginController {
     @PostMapping("/login")
     public String loginSubmit(@RequestParam String username,
                               @RequestParam String password,
-                              HttpSession session) {
+                              HttpSession session, Model model) {
 
         if (loginService.authenticate(username, password)) {
             session.setAttribute("user", username); // guardamos usuario en sesión
+            model.addAttribute("username", username);
             return "redirect:/index"; // redirige al dashboard
         } else {
             return "redirect:/login?error=true"; // redirige con mensaje de error
@@ -36,13 +38,14 @@ public class LoginController {
 
     // Proteger index
     @GetMapping("/index")
-    public String index(HttpSession session) {
-        if (session.getAttribute("user") == null) {
-            return "redirect:/login"; // redirige al login si no hay sesión
+    public String index(HttpSession session, Model model) {
+        Object user = session.getAttribute("user");
+        if (user == null) {
+            return "redirect:/login";
         }
-        return "index"; // templates/index.html
+        model.addAttribute("username", user); // enviamos a la vista
+        return "index"; // Thymeleaf procesará templates/index.html
     }
-
     // Logout
     @GetMapping("/logout")
     public String logout(HttpSession session) {
@@ -50,3 +53,4 @@ public class LoginController {
         return "redirect:/login"; // cerrar sesión y volver al login
     }
 }
+
