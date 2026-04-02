@@ -36,6 +36,12 @@ public class VentaService {
         return ventaMapper.getVentaById(id);
     }
 
+    public int countVentas() {
+        return (int) ventaMapper.countVentas(); // Cuenta todas las ventas
+    }
+
+
+
 
 }
 

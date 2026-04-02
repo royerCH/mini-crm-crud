@@ -108,5 +108,3 @@ document.addEventListener('DOMContentLoaded', () => {
     loadClientes();              // Solo en clientes.html
     loadTotalClientesDashboard(); // Solo en index/dashboard
 });
-
-console.log("Mostrando el número de elementos en la tabla clientes " + toString());

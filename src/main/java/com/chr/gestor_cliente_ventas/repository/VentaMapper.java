@@ -38,4 +38,9 @@ public interface VentaMapper {
     })
     Venta getVentaById(int id);
 
+
+    @Select("SELECT COUNT(id) FROM ventas")
+    int countVentas();
+
+
 }
