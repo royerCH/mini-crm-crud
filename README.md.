@@ -36,3 +36,8 @@ clientes y ventas, con autenticación de usuarios y una interfaz web moderna y r
    model: clases de entidades (Cliente, Venta, Usuario)
    resources/templates: vistas Thymeleaf (index.html, login.html, clientes.html, ventas.html)
    resources/static: JS y CSS (clientes.js, ventas.js)
+
+
+   ### SE continuará implementando nuevas funcionalidades ......
+
+   SALUDOS !
