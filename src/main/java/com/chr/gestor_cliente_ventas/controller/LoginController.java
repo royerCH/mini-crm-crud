@@ -52,5 +52,9 @@ public class LoginController {
         session.invalidate();
         return "redirect:/login"; // cerrar sesión y volver al login
     }
+    @GetMapping("/consumoapiusers")
+    public String consumoApiUsersPage() {
+        return "consumoapiusers"; // archivo Thymeleaf en templates/
+    }
 }
 
