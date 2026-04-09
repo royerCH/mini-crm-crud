@@ -1,9 +1,15 @@
+console.log("hola mundo, haciendo pruebas para comprobar que responda el JS")
+
+
+// consumoapiusers.js
+
 function cargarAPI() {
     fetch('/api/demo/users')
         .then(resp => resp.json())
         .then(data => {
+            console.log('Datos recibidos:', data);
             const container = document.getElementById('apiDemoContent');
-            container.innerHTML = ''; // limpiar contenido
+            container.innerHTML = '';
             data.forEach(u => {
                 const card = document.createElement('div');
                 card.className = 'col-md-4';
@@ -20,10 +26,13 @@ function cargarAPI() {
             });
         })
         .catch(err => {
-            console.error(err);
+            console.error('Error al consumir API:', err);
             document.getElementById('apiDemoContent').innerHTML = '<p class="text-danger text-center mt-3">Error al cargar datos</p>';
         });
 }
 
-// Cargar automáticamente al mostrar la pestaña
-document.getElementById('integraciones-tab').addEventListener('shown.bs.tab', cargarAPI);
+// Asociar botón al evento
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('btnCargarAPI');
+    if(btn) btn.addEventListener('click', cargarAPI);
+});
