@@ -1,0 +1,32 @@
+body { min-height: 100vh; display: flex; flex-direction: column; background: #f5f5f5; color: #333; }
+main { flex: 1; }
+.card { border-radius: 1rem; box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+footer { background-color: #343a40; color: #fff; }
+
+
+/* Card del reporte general */
+.reporte-card {
+    max-width: 1200px;  /* ajustamos el tamaño del card reporte general*/
+    margin: 20px auto; /* centra horizontalmente y agrega margen superior */
+    padding: 20px;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor de botones */
+.reporte-card .btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* espacio entre botones */
+    margin-top: 15px;
+}
+
+/* Botones uniformes */
+.reporte-card .btn-group a {
+    flex: 1;            /* mismo ancho */
+    min-width: 140px;   /* tamaño mínimo */
+    font-weight: 500;
+    border-radius: 0.5rem;
+    padding: 10px 0;
+}
