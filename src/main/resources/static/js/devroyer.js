@@ -59,7 +59,7 @@ function DevRoyer() {
         ),
         // Cabecera
         e("div", { className: "text-center mb-4" },
-            e("img", { src: "/imgs/royerch.jpeg", className: "rounded-circle mb-2 shadow-sm", width: 160, alt: "Avatar" }),
+            e("img", { src: "/imgs/royerch.jpg", className: "rounded-circle mb-2 shadow-sm", width: 160, alt: "Avatar" }),
             e("h2", null, "ROGELIO CEREZO HERNÁNDEZ"),
             e("p", { className: "text-muted" }, data[lang].title)
         ),
