@@ -36,11 +36,24 @@ public class VentaService {
         return ventaMapper.getVentaById(id);
     }
 
+    public void updateVenta(int id, Venta ventaActualizada) {
+        Venta ventaExistente = ventaMapper.getVentaById(id);
+        if (ventaExistente != null) {
+            ventaActualizada.setId(id); // Aseguramos que el ID sea el mismo
+            ventaMapper.updateVenta(ventaActualizada);
+        } else {
+            throw new RuntimeException("Venta no encontrada con ID " + id);
+        }
+    }
+
+    // 🔹 Eliminar venta
+    public void deleteVenta(int id) {
+        ventaMapper.deleteVenta(id);
+    }
+
     public int countVentas() {
         return (int) ventaMapper.countVentas(); // Cuenta todas las ventas
     }
-
-
 
 
 }

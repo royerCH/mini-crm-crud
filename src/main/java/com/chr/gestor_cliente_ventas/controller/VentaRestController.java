@@ -44,6 +44,18 @@ public class VentaRestController {
         return ventaService.countVentas(); // Devuelve el total real
     }
 
+    @PutMapping("/{id}")
+    public void updateVenta(@PathVariable int id, @RequestBody Venta venta) {
+        ventaService.updateVenta(id, venta);
+    }
+
+
+    @DeleteMapping("/{id}")
+    public void deleteVenta(@PathVariable int id) {
+        ventaService.deleteVenta(id);
+    }
+
+
 
 
 }

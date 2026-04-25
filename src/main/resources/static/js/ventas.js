@@ -126,6 +126,3 @@ async function deleteVenta(id) {
         }
     }
 }
-
-
-

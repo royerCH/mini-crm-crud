@@ -38,6 +38,12 @@ public interface VentaMapper {
     })
     Venta getVentaById(int id);
 
+    @Update("UPDATE ventas SET cliente_id=#{clienteId}, monto=#{monto}, fecha=#{fecha} WHERE id=#{id}")
+    void updateVenta(Venta venta);
+
+    @Delete("DELETE FROM ventas WHERE id = #{id}")
+    void deleteVenta(int id);
+
 
     @Select("SELECT COUNT(id) FROM ventas")
     int countVentas();
