@@ -1,7 +1,45 @@
 
-console.log("Buscando número de ventas...");
-
 document.addEventListener('DOMContentLoaded', () => {
+
+        // --- Instancia única del modal ---
+        const clientesModalEl = document.getElementById('clientesModal');
+        const clientesModal = new bootstrap.Modal(clientesModalEl, {}); // instancia única
+        const clientesTableBody = document.querySelector('#clientesTable tbody');
+
+        // Botón "Ver Clientes"
+        const mostrClientes = document.getElementById("btnVerClientes");
+        if (mostrClientes) {
+            mostrClientes.addEventListener("click", async () => {
+                // Limpiar tabla antes de cargar
+                clientesTableBody.innerHTML = '';
+
+                try {
+                    // Traer clientes desde el backend
+                    const res = await fetch('/api/clientes');
+                    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+                    const clientes = await res.json();
+
+                    // Llenar tabla
+                    clientes.forEach(c => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `<td>${c.id}</td><td>${c.nombre}</td>`;
+                        clientesTableBody.appendChild(tr);
+                    });
+
+                    // Abrir modal
+                    clientesModal.show();
+
+                } catch (err) {
+                    console.error("Error cargando clientes:", err);
+                    clientesTableBody.innerHTML = `<tr><td colspan="2">No se pudieron cargar los clientes</td></tr>`;
+                }
+            });
+        }
+
+        // Limpiar tabla al cerrar modal
+        clientesModalEl.addEventListener('hidden.bs.modal', () => {
+            clientesTableBody.innerHTML = '';
+        });
 
     // --- Dashboard: total de ventas ---
     const totalElemVentas = document.getElementById('totalVentas');
@@ -41,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <td>${new Date(v.fecha).toLocaleString()}</td>
                     <td>
                         <button onclick="editVenta(${v.id})" class="btn btn-warning btn-sm">Editar</button>
-                        <button onclick="deleteVenta(${v.id})" class="btn btn-danger btn-sm">Eliminar</button>
+                        <button onclick="deleteVenta(${v.id})" class="btn btn-danger btn-sm">Eliminar</button>                      
                     </td>
                 `;
                 tableBody.appendChild(tr);
@@ -119,10 +157,17 @@ async function deleteVenta(id) {
                     <td>
                         <button onclick="editVenta(${v.id})" class="btn btn-warning btn-sm">Editar</button>
                         <button onclick="deleteVenta(${v.id})" class="btn btn-danger btn-sm">Eliminar</button>
+               
+                       
                     </td>
                 `;
                 tableBody.appendChild(tr);
             });
         }
     }
+
 }
+
+
+
+

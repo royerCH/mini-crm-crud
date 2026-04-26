@@ -6,12 +6,22 @@
     <link rel="stylesheet" href="css/ventas.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
 <!-- Título y botón al index -->
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a href="/index"  style="align-content: baseline" class="btn btn-primary">Volver al Inicio</a>
+</div>
+<div>
+
+</div>
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h2>Gestión de Clientes</h2>
-    <a href="/index" class="btn btn-primary">Volver al Inicio</a>
+</div>
+<div>
+    <h2>En esta sección se registra una venta que realizó un cliente es decir agregas primero el Id existente del cliente y después agregas los datos faltantes como monto, fecha y hora de venta </h2>
 </div>
 
 <img id="img-encabezado" src="imgs/img_proyecto_ventas_1.png" class="img-fluid" alt="...">
@@ -19,7 +29,7 @@
 <table class="table table-striped">
     <thead>
     <tr>
-        <th scope="col">Id</th>
+        <th scope="col">Id ventas</th>
         <th scope="col">ID del Cliente</th>
         <th scope="col">Monto</th>
         <th scope="col">Fecha de venta</th>
@@ -45,8 +55,44 @@
         <button type="button" id="cancelEdit" class="btn btn-secondary">Cancelar</button>
     </div>
 </form>
+<!-- Modal Bootstrap para Clientes -->
+<div class="modal fade" id="clientesModal" tabindex="-1" aria-labelledby="clientesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="clientesModalLabel">Clientes Existentes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped table-sm" id="clientesTable">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="text-align:center; margin-top:20px;">
+    <button type="button" class="btn btn-info" id="btnVerClientes" data-bs-toggle="modal" data-bs-target="#clientesModal">
+        Ver Clientes
+    </button>
+</div>
+
+
+
+
+
 
 <!-- script js  -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/ventas.js"></script>
 
 </body>

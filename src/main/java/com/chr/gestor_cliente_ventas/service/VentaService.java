@@ -19,6 +19,8 @@ public class VentaService {
         this.ventaMapper = ventaMapper;
     }
 
+
+
     public List<Venta> getAllVentas() {
         return ventaMapper.getAllVentas();
     }
@@ -54,6 +56,8 @@ public class VentaService {
     public int countVentas() {
         return (int) ventaMapper.countVentas(); // Cuenta todas las ventas
     }
+
+
 
 
 }
