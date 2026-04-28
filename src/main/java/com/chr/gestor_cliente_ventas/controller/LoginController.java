@@ -1,6 +1,8 @@
 package com.chr.gestor_cliente_ventas.controller;
 
+import com.chr.gestor_cliente_ventas.repository.VentaMapper;
 import com.chr.gestor_cliente_ventas.service.LoginService;
+import com.chr.gestor_cliente_ventas.service.VentaService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,9 +12,11 @@ import org.springframework.web.bind.annotation.*;
 public class LoginController {
 
     private final LoginService loginService;
+    private final VentaService ventaService;
 
-    public LoginController(LoginService loginService) {
+    public LoginController(LoginService loginService, VentaService ventaService) {
         this.loginService = loginService;
+        this.ventaService = ventaService;
     }
 
     // Mostrar login
@@ -43,8 +47,11 @@ public class LoginController {
         if (user == null) {
             return "redirect:/login";
         }
-        model.addAttribute("username", user); // enviamos a la vista
-        return "index"; // Thymeleaf procesará templates/index.html
+        int totalVentas = ventaService.countVentas();
+        model.addAttribute("username", user);
+        model.addAttribute("totalVentas", totalVentas);
+
+        return "index"; // aquí thymeleaf procesa los datos a la vista
     }
     // Logout
     @GetMapping("/logout")
@@ -56,5 +63,13 @@ public class LoginController {
     public String consumoApiUsersPage() {
         return "consumoapiusers"; // archivo Thymeleaf en templates/
     }
+
+
+
+
+
+
+
+
 }
 

@@ -41,18 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
             clientesTableBody.innerHTML = '';
         });
 
-    // --- Dashboard: total de ventas ---
-    const totalElemVentas = document.getElementById('totalVentas');
-    if (totalElemVentas) {
-        fetch('/api/ventas/countventas')
-            .then(res => res.text())
-            .then(total => {
-                totalElemVentas.textContent = total;
-                console.log("Número de ventas cargado:", total);
-            })
-            .catch(err => console.error("Error cargando total de ventas:", err));
-    }
-
     // --- Página de ventas: tabla y formulario ---
     const form = document.getElementById('ventaForm');
     const cancelBtn = document.getElementById('cancelEdit');
