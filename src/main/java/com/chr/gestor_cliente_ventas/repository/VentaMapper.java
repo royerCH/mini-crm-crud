@@ -46,7 +46,7 @@ public interface VentaMapper {
 
 
     @Select("SELECT COUNT(id) FROM ventas")
-    int countVentas();
+    int countVentas();// consulta para obtener numero de ventas y mostrarlo en Dashboard
 
 
 }
