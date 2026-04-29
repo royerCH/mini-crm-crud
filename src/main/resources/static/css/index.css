@@ -30,3 +30,17 @@ footer { background-color: #343a40; color: #fff; }
     border-radius: 0.5rem;
     padding: 10px 0;
 }
+
+.custom-header {
+    background-color: royalblue; /* azul más suave */
+}
+
+/* Hover en las cards para efecto flotante*/
+.hover-shadow {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
