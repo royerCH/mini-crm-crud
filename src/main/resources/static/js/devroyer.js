@@ -10,12 +10,24 @@ const data = {
             { name: "AWS, RDS, EC2, ElastikBeansTalk", level: 40 }
         ],
         experience: [
-           "hola mundo",
-            "hola mundo dos",
-            "hola mundo react",
-            "hola mundo react",
-            "hola mundo react",
-            "hola mundo react"
+           "• Empresa INFOTEC en un periodo de Octubre del 2023 a Noviembre de 2023. realizaba funciones de programador JR. en lenguaje de programación PHP. \n " +
+           "\nEstaba contratado por honorarios",
+            "• Empresa SEDENA (SECRETARÍA DE LA DEFENSA NACIONAL). En un periodo de Enero - Abril de 2023, colaboré en la continuidad de un desarrollo de una aplicación móvil con el lenguaje de programación Swift, usando xCode, en su versión 12.4. " +
+            "dicha aplicación mostraba información y permitía la compra de boletos para ingresar al evento denominado FAMEX 2023 (Feria Aeroespacial 2023).\n" +
+            " https://www.f-airmexico.com.mx/ ",
+            "•\tEmpresa got It Business Solutions SA. DE CV., en un periodo\n" +
+            "de Septiembre 2021 a Abril de 2022.\n" +
+            "-\tAprendí Desarrollo Web con framework Laravel 8 (Prácticas profesionales)\n" +
+            "-\tMantenimiento de sistemas de información en PHP\n",
+            "Hoy en día realizo Freelance en un proyecto con las siguientes características\n" +
+            " "+
+            "\tDesarrollador Java con experiencia en Spring Boot, Hibernate y MySQL, construyendo aplicaciones CRUD robustas con manejo de errores y validación de entradas. Experto en logging y diseño modular, separando DTOs, repositorios y servicios para un código mantenible y escalable.\n" +
+            "\n" +
+            "Mini CRM – Gestión de Clientes y Ventas\n" +
+            "Java 17 | Spring Boot | MyBatis | Thymeleaf | MySQL | GitHub\n" +
+            "•\tDesarrollo full-stack de un mini CRM para gestionar clientes y ventas, incluyendo operaciones CRUD y autenticación de usuarios.\n" +
+            "•\tConstrucción de REST APIs y lógica de negocio con MyBatis, optimizando consultas a la base de datos MySQL.\n" +
+            "•\tInterfaces web dinámicas y responsivas con Thymeleaf y JavaScript, mejorando la experiencia del usuario.\n"
 
         ],
         contact: {
@@ -35,14 +47,29 @@ const data = {
             { name: "AWS, RDS, EC2, ElastikBeansTalk", level: 40 }
         ],
         experience: [
-            "HELLO WROLD",
-            "HELLO WORLD 2",
-            "HELLO WORLD 3",
-            "HELLO WORLD 4"
+            "INFOTEC company, in the period from October 2023 to November 2023, performed functions of a JR. programmer in the PHP programming language.",
+            "•SEDENA Company (SECRETARÍA DE LA DEFENSA NACIONAL). During the period from January to April 2023, I collaborated on the continuation of the development of a mobile application using the Swift programming language, using xCode, version 12.4. This application displayed information and allowed the purchase of tickets to attend the event called FAMEX 2023 (FERIA AEROESPACIAL 2023).\n" +
+            "https://www.f-airmexico.com.mx/",
+            "•\tCompany got It Business Solutions SA. DE CV., in a period\n" +
+            "from September 2021 to April 2022.\n" +
+            " I learned Web Development with Laravel 8 framework (Professional practices)\n" +
+            " Maintenance of information systems in PHP",
+            "Currently, I work as a freelancer on a project with the following characteristics:\n" +
+            "\n" +
+            "I am a Java developer with experience in Spring Boot, Hibernate, and MySQL, building robust CRUD applications with error handling and input validation. I am an expert in logging and modular design, separating DTOs, repositories, and services for maintainable and scalable code.\n" +
+            "\n" +
+            "\"Mini CRM – Customer and Sales Management\" +\n" +
+            "\n" +
+            "\"Java 17 | Spring Boot | MyBatis | Thymeleaf | MySQL | GitHub\"\n" +
+            "\n" +
+            "I developed a full-stack mini CRM for managing customers and sales, including CRUD operations and user authentication.\n" +
+            "\n" +
+            "I built REST APIs and business logic with MyBatis, optimizing MySQL database queries.\n" +
+            "I created dynamic and responsive web interfaces with Thymeleaf and JavaScript, improving the user experience."
         ],
         contact: {
             email: "rogeliocerezohernandez@gmail.com",
-            phone: "+52 555 123 4567",
+            phone: "+52 56 45031914",
             linkedin: "LinkedIn",
             github: "GitHubt"
         },
