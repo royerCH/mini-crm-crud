@@ -42,48 +42,17 @@ public class ClienteRestController {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-esto está funcionando bien, podría estar mejor
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteCliente(@PathVariable int id) {
 
+        String mensaje = clienteService.deleteClienteIfNoVentas(id);
 
-        boolean eliminado = clienteService.deleteClienteIfNoVentas(id);
-        clienteService.getClienteById(id);
-        if (eliminado) {
-            return ResponseEntity.ok("Cliente eliminado correctamente.");
+        if (mensaje.contains("eliminado correctamente")) {
+            return ResponseEntity.ok(mensaje);
         } else {
-            return ResponseEntity
-                    .status(HttpStatus.BAD_REQUEST)
-                    .body("No se puede eliminar: primero borra las ventas asociadas.");
+            return ResponseEntity.badRequest().body(mensaje);
         }
     }
-*/
 
 
 

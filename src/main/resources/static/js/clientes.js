@@ -100,7 +100,7 @@ async function deleteCliente(id) {
         loadTotalClientesDashboard();
 
     } catch (error) {
-        alert("Error: " + error.message);
+        alert("Advertencia: " + error.message);
     }
 }
 

@@ -37,7 +37,24 @@ public class ClienteService {
 
     // vamos implementar un método que muestre el nombre de la persona que se borró
 
-    
+    public String deleteClienteIfNoVentas(int id) {
+
+        Cliente cliente = clienteMapper.getClienteById(id);
+
+        if (cliente == null) {
+            return "Cliente no existe";
+        }
+
+        int ventas = clienteMapper.countVentasByClienteId(id);
+
+        if (ventas > 0) {
+            return cliente.getNombre() + " no se puede eliminar, tiene " + ventas + " ventas";
+        }
+
+        clienteMapper.deleteCliente(id);
+
+        return "Cliente " + cliente.getNombre() + " eliminado correctamente";
+    }
 
 
 
