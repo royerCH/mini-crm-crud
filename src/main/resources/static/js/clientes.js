@@ -82,10 +82,25 @@ cancelBtn?.addEventListener('click', () => {
 
 // --- Eliminar cliente ---
 async function deleteCliente(id) {
-    if (confirm('¿Seguro que quieres eliminar este cliente?')) {
-        await fetch(`/api/clientes/${id}`, { method: 'DELETE' });
+    if (!confirm('¿Seguro que quieres eliminar este cliente?')) return;
+
+    try {
+        const res = await fetch(`/api/clientes/${id}`, {
+            method: 'DELETE'
+        });
+
+        if (!res.ok) {
+            const msg = await res.text();
+            throw new Error(msg);
+        }
+
+        alert("Cliente eliminado correctamente");
+
         loadClientes();
-        loadTotalClientesDashboard(); // Actualiza el total en dashboard
+        loadTotalClientesDashboard();
+
+    } catch (error) {
+        alert("Error: " + error.message);
     }
 }
 

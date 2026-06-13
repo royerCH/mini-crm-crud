@@ -41,20 +41,40 @@ public class ClienteRestController {
         clienteService.updateCliente(cliente);
     }
 
-    /*
-    @DeleteMapping("/{id}")
-    public void deleteCliente(@PathVariable int id) {
-        clienteService.deleteCliente(id);
-    }
-    método original
-    */
-
-    // corregir método delete
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+esto está funcionando bien, podría estar mejor
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteCliente(@PathVariable int id) {
+
+
         boolean eliminado = clienteService.deleteClienteIfNoVentas(id);
+        clienteService.getClienteById(id);
         if (eliminado) {
             return ResponseEntity.ok("Cliente eliminado correctamente.");
         } else {
@@ -63,12 +83,17 @@ public class ClienteRestController {
                     .body("No se puede eliminar: primero borra las ventas asociadas.");
         }
     }
+*/
+
+
 
 
     @GetMapping("/count")
     public int countClientes() {
         return clienteService.getAllClientes().size(); // O tu Mapper countClientes()
     }
+
+
 }
 
 

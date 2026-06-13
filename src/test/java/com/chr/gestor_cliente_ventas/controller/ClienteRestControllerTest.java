@@ -23,12 +23,4 @@ class ClienteRestControllerTest {
         mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
     }
 
-    @Test
-    void deleteCliente_NoVentas_Returns200() throws Exception {
-        when(clienteService.deleteClienteIfNoVentas(1)).thenReturn(true);
-
-        mockMvc.perform(delete("/api/clientes/1"))
-                .andExpect(status().isOk())
-                .andExpect(content().string("Cliente eliminado correctamente."));
-    }
 }

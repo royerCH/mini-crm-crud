@@ -4,13 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 @Controller
-public class MainControllers {
-
-
-
-
-    @Controller
-    public class MainController {
+public class MainController {
 
         // Interactua con la pestaña acerca del desarrollador
         @GetMapping("/developer")
@@ -19,5 +13,5 @@ public class MainControllers {
             return "devroyer";
         }
 
-    }
+
 }

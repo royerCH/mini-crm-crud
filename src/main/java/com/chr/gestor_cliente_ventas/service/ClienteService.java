@@ -35,31 +35,55 @@ public class ClienteService {
     }
 
 
+    // vamos implementar un método que muestre el nombre de la persona que se borró
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
             * Borra un cliente solo si no tiene ventas asociadas.
      * @param id id del cliente
      * @return true si se borró, false si tiene ventas o no existe
-     */
+
     public boolean deleteClienteIfNoVentas(int id) {
         Cliente cliente = clienteMapper.getClienteById(id);
-        if (cliente == null) return false; // cliente no existe
+        if (cliente == null) {
+            return false;
+        }
 
-        System.out.println("Cliente encontrado: " + cliente.getNombre());
-
-        // contar ventas reales del cliente
         int countVentas = clienteMapper.countVentasByClienteId(id);
-        System.out.println("Ventas asociadas: " + countVentas);
 
         if (countVentas > 0) {
-            return false; // tiene ventas, no borrar
+            return false;
         }
 
         clienteMapper.deleteCliente(id);
-        System.out.println("Cliente borrado: " + id);
-        return true; // borrado exitoso
+        return true;
     }
 
-
+*/
 
 
 }
