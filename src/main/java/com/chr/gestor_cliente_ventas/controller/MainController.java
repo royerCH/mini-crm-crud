@@ -13,5 +13,18 @@ public class MainController {
             return "devroyer";
         }
 
+    // Interactua con la pestaña acerca del desarrollador
+    @GetMapping("/financiera")
+    public String irFinanciera() {
+
+        return "bancafinanciera";
+    }
+
+    @GetMapping("/sitioescolar")
+    public String irSitioEscolar() {
+
+        return "adminescolar";
+    }
+
 
 }
